@@ -19,7 +19,7 @@ include_once "debug.php";
     <br><br>
 		<!-- Formulario de interacción con el usuario	-->
         <div class="container mt-5" style="max-width: 400px;">
-            <form method="POST" action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>">
+            <form action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
             <div class="mb-3">
                 <label for="username" class="form-label">Usuario</label>
                 <input type="text" class="form-control" id="username" placeholder="Ingresa tu usuario" required />
@@ -28,7 +28,7 @@ include_once "debug.php";
                 <label for="password" class="form-label">Contraseña</label>
                 <input type="password" class="form-control" id="password" placeholder="Ingresa tu contraseña" required />
             </div>
-            <button type="submit" class="btn btn-primary w-100">Ingresar</button>
+            <button type="submit" name="login" class="btn btn-primary w-100">Ingresar</button>
             </form>
         </div>
 		<hr>
