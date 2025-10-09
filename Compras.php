@@ -14,11 +14,11 @@ if (!isset($_SESSION["acme_on"]))
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Módulo de compras</title>
         <?php
-            echo '<h3> USUARIO:'.$_SESSION["_USER"].' ROL:'.$_SESSION["_ROL"].'</h3>';
+            echo '<h3 style="text-align: right;"> USUARIO:'.$_SESSION["_USER"].' ROL:'.$_SESSION["_ROL"].'</h3>';
         ?>
     </head>
     <body>
-        <h1>Ventana de Compras</h1>
+        <h1 style="text-align: center;">Ventana de Compras</h1>
         <p>
             <a href="Login.php">Salir</a>
         </p>

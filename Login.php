@@ -9,28 +9,33 @@ include_once "debug.php";
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Ventana de Login</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <title>Ventana de Login</title>
+ 
     </head>
     <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <h1>Ventana de login</h1>
-    <br><br>
+
+<h1>ACME : Entrada al Sistema</h1>
+<div class="container mt-5" style="max-width: 400px;">
 		<!-- Formulario de interacción con el usuario	-->
-        <div class="container mt-5" style="max-width: 400px;">
-            <form action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-            <div class="mb-3">
-                <label for="username" class="form-label">Usuario</label>
-                <input type="text" class="form-control" id="username" placeholder="Ingresa tu usuario" required />
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="password" placeholder="Ingresa tu contraseña" required />
-            </div>
-            <button type="submit" name="login" class="btn btn-primary w-100">Ingresar</button>
-            </form>
+        <form action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+        <div>
+            <label for="username" class="form-label">Usuario:</label>
+            <input type="text" class="form-control" name="username" id="name">
         </div>
+        <div>
+            <label for="password" class="form-label">Contaseña:</label>
+            <input type="password" class="form-control" name="password" id="password">
+        </div>
+        <section style="margin-left:2rem;">
+            <br>
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary w-50" name="login">Entrar</button>
+        </div>
+        </section>
+        </form>
+</div>
 		<hr>
 		<section id = "sol">
 			<?php 
