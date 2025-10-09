@@ -9,26 +9,28 @@ include_once "debug.php";
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         <title>Ventana de Login</title>
     </head>
     <body>
-
-<h1>Ventana de login</h1>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <h1>Ventana de login</h1>
+    <br><br>
 		<!-- Formulario de interacción con el usuario	-->
-        <form action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-        <div>
-            <label for="username">Usuario:</label>
-            <input type="text" name="username" id="name">
+        <div class="container mt-5" style="max-width: 400px;">
+            <form method="POST" action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>">
+            <div class="mb-3">
+                <label for="username" class="form-label">Usuario</label>
+                <input type="text" class="form-control" id="username" placeholder="Ingresa tu usuario" required />
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="password" placeholder="Ingresa tu contraseña" required />
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Ingresar</button>
+            </form>
         </div>
-        <div>
-            <label for="password">Contaseña:</label>
-            <input type="password" name="password" id="password">
-        </div>
-        <section style="margin-left:2rem;">
-            <button type="submit" name="login">Entrar</button>
-        </section>
-        </form>
 		<hr>
 		<section id = "sol">
 			<?php 
