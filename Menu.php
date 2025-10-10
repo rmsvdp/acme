@@ -2,10 +2,19 @@
 <?php
 include_once "debug.php";
 session_start(); 
-if (!isset($_SESSION["acme_on"]))
-    if (!$_SESSION["acme_on"]){
+if (!isset($_SESSION["acme_on"])|| ($_SESSION["acme_on"]!="Menu"))
+    {   
         header('Location: Login.php');
-        exit(); 
+        exit();
+    }
+?>
+<?php
+//-------------------- Funciones
+    function launch($opcion){
+
+    $_SESSION["acme_on"] = $opcion;
+    header();
+    exit;
     }
 ?>
 <html>
@@ -19,6 +28,7 @@ if (!isset($_SESSION["acme_on"]))
     </head>
     <body>
         <h1 style="text-align: center;"> ACME : Menu de Opciones </h1>
+<!--
         <div class="container mt-5" style="max-width: 600px;">
             <div class="list-group">
                 <a href="Compras.php" class="list-group-item list-group-item-action list-group-item-primary">Módulo de Compras</a>
@@ -26,17 +36,9 @@ if (!isset($_SESSION["acme_on"]))
                 <a href="Login.php" class="list-group-item list-group-item-action list-group-item-danger">Salir</a>
             </div>
         </div>
-        
-   <!--     
-        <p>
-                <a href="Compras.php">Módulo Compras</a>
-        </p>
-        <p>
-                <a href="Ventas.php">Módulo Ventas</a>
-        </p>
-        <p>
-                <a href="Login.php">Salir</a>
-        </p>
 -->
+        <div class="container mt-5" style="max-width: 600px;">
+        
+    </div>
     </body>
 </html>

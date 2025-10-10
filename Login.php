@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<?php session_start(); ?>
+<?php session_start(); 
+if (isset($_SESSION["acme_on"]))
+    {   
+    session_destroy();  // Eliminar rastros de sesiones anteriores
+    }
+?>
 <?php
 require_once "Usuario.php";
 include_once "bd.php";
@@ -52,13 +57,6 @@ include_once "debug.php";
                         break;
                     }
                 } // foreach
-                /*
-                // Solución ineficiente y poco elegante
-                    if (($u=='admin' && $p=="1234")  ||
-                        ($u=='compras' && $p=="1234")  ||
-                        ($u=='ventas' && $p=="1234"))
-                        $res=true;
-                */
                 return $res;
             }
 			$err = FALSE;
@@ -71,8 +69,8 @@ include_once "debug.php";
 				// procesar parámetros
                 $result = check_user($usuario,$pwd,$lista);
                 if ($result){
-                    $_SESSION["acme_on"]=true;
-                    $nuevaURL = 'Menu.php';
+                    $_SESSION["acme_on"]="Menu";    // Indicamos a donde se debería navegar
+                    $nuevaURL = 'Menu2.php';        // Página que implementa la función
                     header('Location: ' . $nuevaURL);
                     exit(); // Es importante usar exit() después de la redirección
                 }

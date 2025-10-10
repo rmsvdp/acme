@@ -2,10 +2,10 @@
 <?php 
 include_once "debug.php";
 session_start(); 
-if (!isset($_SESSION["acme_on"]))
-    if (!$_SESSION["acme_on"]){
+if (!isset($_SESSION["acme_on"])|| ($_SESSION["acme_on"]!="Compras"))
+    {   
         header('Location: Login.php');
-        exit(); 
+        exit();
     }
 ?>
 <html>
