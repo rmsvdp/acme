@@ -70,7 +70,7 @@ include_once "debug.php";
                 $result = check_user($usuario,$pwd,$lista);
                 if ($result){
                     $_SESSION["acme_on"]="Menu";    // Indicamos a donde se debería navegar
-                    $nuevaURL = 'Menu2.php';        // Página que implementa la función
+                    $nuevaURL = 'Menu.php';        // Página que implementa la función
                     header('Location: ' . $nuevaURL);
                     exit(); // Es importante usar exit() después de la redirección
                 }
