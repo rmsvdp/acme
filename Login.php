@@ -27,7 +27,7 @@ include_once "debug.php";
         <form action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
         <div>
             <label for="username" class="form-label">Usuario:</label>
-            <inputif ($_SERVER["REQUEST_METHOD"] == "POST") {  t type="text" class="form-control" name="username" id="name">
+            <input type="text" class="form-control" name="username" id="name">
         </div>
         <div>
             <label for="password" class="form-label">Contaseña:</label>
