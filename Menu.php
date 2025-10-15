@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 include_once "debug.php";
+require_once "Usuario.php";
 session_start(); 
 if (!isset($_SESSION["acme_on"])|| ($_SESSION["acme_on"]!="Menu"))
     {   
@@ -29,6 +30,10 @@ if (!isset($_SESSION["acme_on"])|| ($_SESSION["acme_on"]!="Menu"))
     <body>
         <br>
         <h1 style="text-align: center;"> ACME : Menu de Opciones </h1>
+        <!--- Mostrar el usuario -->
+        <?php
+            echo '<p>'.$_SESSION["objUsuario"]->nombre .'</p>';
+        ?>
         <div class="container mt-5">
             <div class="d-flex justify-content-center" style="max-width: 600px; margin: 0 auto;">
                 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="w-100">

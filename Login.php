@@ -27,7 +27,7 @@ include_once "debug.php";
         <form action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
         <div>
             <label for="username" class="form-label">Usuario:</label>
-            <input type="text" class="form-control" name="username" id="name">
+            <inputif ($_SERVER["REQUEST_METHOD"] == "POST") {  t type="text" class="form-control" name="username" id="name">
         </div>
         <div>
             <label for="password" class="form-label">Contaseña:</label>
@@ -38,7 +38,7 @@ include_once "debug.php";
         <div class="d-flex justify-content-end">
             <button type="submit" class="btn btn-primary w-50" name="login">Entrar</button>
         </div>
-        </section>
+        </sectionphp>
         </form>
 </div>
 		<hr>
@@ -52,8 +52,10 @@ include_once "debug.php";
                     if (($user->nombre == $u) &&($user->pwd == $p)){
                         $res = true;
                         $rol = $user->rol;
+                        $_SESSION["objUsuario"] = $user;
                         $_SESSION["_USER"] = $u;
                         $_SESSION["_ROL"] = $rol;
+
                         break;
                     }
                 } // foreach
