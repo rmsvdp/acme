@@ -1,3 +1,4 @@
+<!-- merge -->
 <!DOCTYPE html>
 <?php session_start(); 
 if (isset($_SESSION["acme_on"]))
