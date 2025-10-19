@@ -6,6 +6,11 @@ if (isset($_SESSION["acme_on"]))
     }
 ?>
 <?php
+/**
+ * requires e includes necesarios
+ * clases : usuario.php
+ * funciones auxiliares : bd.php (datos) y debug.pgp (depuración)
+ */
 require_once "Usuario.php";
 include_once "bd.php";
 include_once "debug.php";
@@ -45,6 +50,14 @@ include_once "debug.php";
 		<section id = "sol">
 			<?php 
 			// Declarar funciones de la página
+            /**
+             * check_user Comprueba si las credenciales están en la lista de usuarios registrados
+             * @param $u Nombre de usuario
+             * @param $p Contraseña
+             * @param $lista Lista de usuarios registrado
+             * 
+             * @return $res Resultado de la operación true/false
+             */
             function check_user($u,$p,$lista){
                 $res = false;
                 foreach ($lista as $user){
