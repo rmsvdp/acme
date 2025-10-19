@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 /**
+ * @category file
  * Gestiona la página menu.php
  */
 include_once "debug.php";

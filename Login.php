@@ -1,5 +1,12 @@
 <!DOCTYPE html>
-<?php session_start(); 
+
+<?php 
+/**
+ * @category file
+ * Ventana de login, punto de entrada a la aplicación ACME
+ * @version 1.0.0
+ */
+session_start(); 
 if (isset($_SESSION["acme_on"]))
     {   
     session_destroy();  // Eliminar rastros de sesiones anteriores
@@ -52,11 +59,11 @@ include_once "debug.php";
 			// Declarar funciones de la página
             /**
              * check_user Comprueba si las credenciales están en la lista de usuarios registrados
-             * @param $u Nombre de usuario
-             * @param $p Contraseña
-             * @param $lista Lista de usuarios registrado
+             * @param String $u Nombre de usuario
+             * @param String $p Contraseña
+             * @param Mixed $lista Lista de usuarios registrado
              * 
-             * @return $res Resultado de la operación true/false
+             * @return bool $res Resultado de la operación true/false
              */
             function check_user($u,$p,$lista){
                 $res = false;
