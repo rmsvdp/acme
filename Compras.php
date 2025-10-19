@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <?php 
+/**
+ * @category file
+ * Página que simula la entrada al módulo de compras
+ */
 include_once "debug.php";
 session_start(); 
 if (!isset($_SESSION["acme_on"])|| ($_SESSION["acme_on"]!="Compras"))

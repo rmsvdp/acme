@@ -1,5 +1,10 @@
 
 <?php
+/**
+ *  @category file
+ * Fichero para almacenar datos necesarios para la aplicación
+ * Leer requisitos
+ */
 /*
 * !! Antes de incluir este archivo debe estar cargado
 * !! su fichero de clase.
